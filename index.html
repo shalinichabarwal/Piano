@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        #piano {
+            background-color: #00471b;
+            width: 992px;
+            height: 290px;
+            margin: 80px auto;
+            padding: 90px 20px 0 20px;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .keys {
+            background-color: #040404;
+            width: 949px;
+            height: 180px;
+            padding-left: 2px;
+            overflow: hidden;
+        }
+
+        .key {
+            background-color: #ffffff;
+            position: relative;
+            width: 41px;
+            height: 175px;
+            margin: 2px;
+            float: left;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .key.black--key::after {
+            background-color: #1d1e22;
+            content: "";
+            position: absolute;
+            left: -18px;
+            width: 32px;
+            height: 100px;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .logo {
+            width: 200px;
+            position: absolute;
+            top: 23px;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            #piano {
+                width: 358px;
+            }
+
+            .keys {
+                width: 318px;
+            }
+
+            .logo {
+                width: 150px;
+                color: white;
+            }
+        }
+
+        .key:hover {
+            background-color: #c9c3c3;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="piano">
+        <div class="logo"> Shalini</div>
+        <div class="keys">
+            <div class="key wk"></div>
+            <div class="key black--key bk1 "></div>
+            <div class="key black--key bk2"></div>
+            <div class="key wk"></div>
+            <div class="key black--key bk1"></div>
+            <div class="key black--key bk2"></div>
+            <div class="key black--key bk1"></div>
+
+            <div class="key wk"></div>
+            <div class="key black--key bk1 "></div>
+            <div class="key black--key bk2"></div>
+            <div class="key wk"></div>
+            <div class="key black--key bk1"></div>
+            <div class="key black--key bk2"></div>
+            <div class="key black--key bk1"></div>
+            <div class="key wk"></div>
+            <div class="key black--key bk1 "></div>
+            <div class="key black--key bk2"></div>
+            <div class="key wk"></div>
+            <div class="key black--key bk1"></div>
+            <div class="key black--key bk2"></div>
+            <div class="key black--key bk1"></div>
+
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.wk').forEach(key => {
+            key.addEventListener('click', () => {
+                const audio = new Audio('./audio/ding-1-14705.mp3')      
+                    audio.play();
+                
+            });
+        });
+        
+        document.querySelectorAll('.bk2').forEach(key => {
+            key.addEventListener('click', () => {
+                const audio = new Audio('./audio/steel-blade-slice-1-188213.mp3')      
+                    audio.play();
+                
+            });
+        });
+        document.querySelectorAll('.bk1').forEach(key => {
+            key.addEventListener('click', () => {
+                const audio = new Audio('./audio/swing-whoosh-weapon-1-189819.mp3')      
+                    audio.play();
+                
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>
